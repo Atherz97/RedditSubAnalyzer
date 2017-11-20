@@ -22,9 +22,9 @@ NEUTRAL_ADJECTIVES = {"concerned","clever","crazy","creepy","different","difficu
 
 BAD_ADJECTIVES = {"abhorrent","abnormal","abrupt","afraid","aggressive","ambiguous","angry","annoyed","annoying","anxious","apathetic","ashamed","average","awful","bad","bitter","bizarre","boring","broken","cheaply","confused","damaging","dangerous","dark","dead","depressing","debunked","disastrous","disgusted","disgusting","disturbed","doubtful","dramatic","dry","dull","dumb","embarrassed","empty","envious","expensive","false","frightened","frightening","hateful","heartbreaking","hesitant","hideous","horrible","hurt","idiotic","ignorant","lacking","lame","late","laughable","lazy","ludicrous","naive","opposite","outrageous","painful","pathetic","plain","pointless","pricey","questionable","sad","salty","scary","spiteful","stupid","tacky","tasteless","terrible","thoughtless","threatening","tiresome","typical","ugliest","ugly","undesirable","unhealthy","uninterested","unnatural","unsuitable","unused","unwieldy","upset","uptight","useless","wasteful","well-off","worried","worthless","wrong",}
 
-reddit = praw.Reddit(client_id='_-kiz0mWVJD_7A',
-           client_secret='rHbCIWK2puAaPoG4MOY57LyH6nw',
-           user_agent='linux:com.athconnect.skim:v0.0.1 (by /u/Atherz097)')
+reddit = praw.Reddit(client_id='@@SET YOUR REDDIT APP ID@@',
+           client_secret='@@SET YOUR REDDIT APP SECRET@@',
+           user_agent='linux:com.athconnect.subeval (by /u/@@SET YOUR USERNAME@@)')
             
 if reddit.read_only:
   print("Evaluating subreddits:")
@@ -102,12 +102,13 @@ while 1 == 1:
 					numGood = 0
 					numBad = 0
 					if len(adjs) > 0:
-				    	#print("")
+				    	#print("") # uncomment to print sub names
 				    	#print("(" + str(len(comments)) + ") " + submission.title)
 						adjstring = " "
 						for a in adjs:
 							adjstring = adjstring + a + " "
 			        	#print(adjstring)
+					
 			# write to file
 			color = bcolors.OKGREEN
 			if b == 0:
@@ -149,7 +150,7 @@ while 1 == 1:
 				file.write(today.strftime("%m/%d/%Y %H:%M")+","+str(int(g-b))+",  \t,"+bar+" "+volume+"\n")
 		
 		# end loop
-		print("invest wisely!")
+		print("good luck have fun :)")
 		time.sleep(1800)
 	except Exception as e:
 		print("error!")
